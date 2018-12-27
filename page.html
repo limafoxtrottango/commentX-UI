@@ -22,8 +22,11 @@
 
 	<div :class="{bold: isFolder}" style="width: 100%;">
 				
+		<div style="display: inline-block; width: 2%">	
+			<span @click="toggle" v-if="isFolder">[{{ open ? '-' : '+' }}]</span>	
+		</div>	
 	
-		<div style="display: inline-block; width: 100%; border:1px dotted black; background-color: #D3D3D3">
+		<div style="display: inline-block; width: 90%; border:1px dotted black; background-color: #D3D3D3">
 			<div style="width: 100%; margin-top: 2px">
 				<textarea style="width: 100%" v-model="model.name" placeholder="Add a new comment"></textarea>
 			</div>
@@ -34,7 +37,6 @@
 			</div>
 
 		</div>
-		<span @click="toggle" v-if="isFolder">[{{ open ? '-' : '+' }}]</span>
 	</div>
 	
 	<ul v-show="open" v-if="isFolder">
