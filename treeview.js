@@ -81,22 +81,32 @@ function treeView () {
     "id": "parent",
     "pageURIHash": "3988665684",
     "parentId": null
-  }]
+  }, {"name": "Here is a parent comment",
+    "id": "parent",
+    "pageURIHash": "3988665684",
+    "parentId": null},
 
-  // var divIds = [];
+{"name": "Here is a parent comment",
+    "id": "parent",
+    "pageURIHash": "3988665684",
+    "parentId": null}
 
-  // for (i = 0; i < data.length; i++) { 
+    ]
 
-  //   //generate an Id for the UI div
-  //   var id = Math.random().toString(36).substring(6);
-  //   divIds.push(id);
+  var divIds = [];
 
-  //   var ul = document.createElement('ul');
-  //   ul.setAttribute("id", id);
+  for (i = 0; i < data.length; i++) { 
 
-  //   ul.innerHTML = '<item class="item" :model="treeData"> </item>';
-  //  // document.getElementById('commentsList').appendChild(ul);
-  // }
+    //generate an Id for the UI div
+    var id = Math.random().toString(36).substring(6);
+    divIds.push(id);
+
+    var ul = document.createElement('ul');
+    ul.setAttribute("id", id);
+
+    ul.innerHTML = '<item class="item" :model="treeData"> </item>';
+    document.getElementById('commentsList').appendChild(ul);
+  }
 
 // define the item component
 Vue.component('item', {
@@ -152,14 +162,30 @@ Vue.component('item', {
 }
 })
 
-var arr1 = ['demo'];
-
-// boot up the demo
-var demo = new Vue({
-  el: '#' + arr1[0],
+for(var i = 0 ; i < divIds.length; i++) {
+    new Vue({
+  el: '#' + divIds[i],
   data: {
-    treeData: data[0]
+    treeData: data[i]
   }
 })
+}
+
+
+
+// //boot up the demo
+// new Vue({
+//   el: '#' + divIds[0],
+//   data: {
+//     treeData: data[0]
+//   }
+// })
+
+// new Vue({
+//   el: '#' + divIds[1],
+//   data: {
+//     treeData: data[1]
+//   }
+// })
 
 }
