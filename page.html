@@ -2,22 +2,17 @@
 	<head>
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 		<script src="treeview.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 
 	<body>
-		<ul id="demo">
-			<item
-			class="item"
-			:model="treeData">
-		</item>
-	</ul>
 
 	<div id = "commentsList">
 	</div>
 
 	<script type="text/javascript">
-		window.onload = treeView;
+		window.onload = fetchComments;
 	</script>
 
 	<script type="text/x-template" id="item-template">
