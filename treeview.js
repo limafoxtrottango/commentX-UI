@@ -1,6 +1,6 @@
 function treeView () {
 
-  var data = {
+  var data = [{
     "children": [
     {
       "children": [
@@ -81,7 +81,22 @@ function treeView () {
     "id": "parent",
     "pageURIHash": "3988665684",
     "parentId": null
-  }
+  }]
+
+  // var divIds = [];
+
+  // for (i = 0; i < data.length; i++) { 
+
+  //   //generate an Id for the UI div
+  //   var id = Math.random().toString(36).substring(6);
+  //   divIds.push(id);
+
+  //   var ul = document.createElement('ul');
+  //   ul.setAttribute("id", id);
+
+  //   ul.innerHTML = '<item class="item" :model="treeData"> </item>';
+  //  // document.getElementById('commentsList').appendChild(ul);
+  // }
 
 // define the item component
 Vue.component('item', {
@@ -137,11 +152,13 @@ Vue.component('item', {
 }
 })
 
+var arr1 = ['demo'];
+
 // boot up the demo
 var demo = new Vue({
-  el: '#demo',
+  el: '#' + arr1[0],
   data: {
-    treeData: data
+    treeData: data[0]
   }
 })
 
